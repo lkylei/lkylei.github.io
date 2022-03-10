@@ -1,50 +1,154 @@
 ---
 permalink: /
-title: "academicpages is a ready-to-fork GitHub Pages template for academic personal websites"
-excerpt: "About me"
+title: "About"
+excerpt: "About"
 author_profile: true
 redirect_from: 
   - /about/
   - /about.html
 ---
 
-This is the front page of a website that is powered by the [academicpages template](https://github.com/academicpages/academicpages.github.io) and hosted on GitHub pages. [GitHub pages](https://pages.github.com) is a free service in which websites are built and hosted from code and data stored in a GitHub repository, automatically updating when a new commit is made to the respository. This template was forked from the [Minimal Mistakes Jekyll Theme](https://mmistakes.github.io/minimal-mistakes/) created by Michael Rose, and then extended to support the kinds of content that academics have: publications, talks, teaching, a portfolio, blog posts, and a dynamically-generated CV. You can fork [this repository](https://github.com/academicpages/academicpages.github.io) right now, modify the configuration and markdown files, add your own PDFs and other content, and have your own site for free, with no ads! An older version of this template powers my own personal website at [stuartgeiger.com](http://stuartgeiger.com), which uses [this Github repository](https://github.com/staeiou/staeiou.github.io).
+<div class="row">
+<div id="about" class="left">
+I am a staff Machine Learning Engineer at PayPal. I am currently working on deep learning models, particular in transfer learning, few-shots learning and multi-task learning for NLP applications. I am passionate about applying deep learning algorithms to solve real-world problems.  Prior to that, I obtained my Ph.D in Computer Science and Engineering from Penn State University. I was working with Prof. Daniel Kifer and Prof. Zhenhui Li on machine learning algorithms in outlier detection & explanation, differential privacy and computational social science.
+</div>
+<div id="image" class="right">
+<img class="center" width="100%" src="/images/homepage-removebg_crop.png">
+</div>
+</div>
 
-A data-driven personal website
+<style>
+.row {
+  display: inline-flex;
+}
+
+.left {
+  flex: 100%;
+}
+
+.right {
+  flex: 0%;
+}
+
+@media screen and (max-width: 768px) {
+.row {
+   display: block;
+}
+.center {
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+}
+
+</style>
+
+<script>
+const about = document.getElementById('about');
+
+const image = document.getElementById('image');
+
+// ✅ Show hidden DIV on hover
+about.addEventListener('mouseover', function handleMouseOver() {
+  about.style.flex = '80%';
+  image.style.flix= '20%';
+
+  // 👇️ if you used visibility property to hide div
+  // hiddenDiv.style.visibility = 'visible';
+});
+
+// ✅ (optionally) Hide DIV on mouse out
+about.addEventListener('mouseout', function handleMouseOut() {
+  about.style.flex = '100%';
+  image.style.flix= '0%';
+
+  // 👇️ if you used visibility property to hide div
+  // hiddenDiv.style.visibility = 'hidden';
+});
+</script>
+
+[homepage]: /images/homepage-removebg.png
+{: width="300px"}
+
+[pdf]: https://i.imgur.com/n1WLcBI.png
+{: width="50px"}
+
+[slide]: https://i.imgur.com/hQPyFHg.png
+{: width="50px"}
+
+[poster]: https://i.imgur.com/VNINQ4E.png
+{: width="60px"}
+
+[data]: https://i.imgur.com/Et7tJqY.png
+{: width="50px"}
+
+[code]: https://i.imgur.com/rMo1TrV.png
+{: width="50px"}
+
+[youtube]: https://i.imgur.com/9oPapf2.png
+{: width="20px"}
+
+[paypal]: https://i.imgur.com/t7Vpl6o.png
+{: width="90px"}
+
+[psu]: https://i.imgur.com/ymfHZg1.png
+{: width="100px"}
+
+[ntnu]: https://i.imgur.com/yz3EIhF.png
+{: width="120px" style="margin:5px"}
+
+---
+
+Experience
 ======
-Like many other Jekyll-based GitHub Pages templates, academicpages makes you separate the website's content from its form. The content & metadata of your website are in structured markdown files, while various other files constitute the theme, specifying how to transform that content & metadata into HTML pages. You keep these various markdown (.md), YAML (.yml), HTML, and CSS files in a public GitHub repository. Each time you commit and push an update to the repository, the [GitHub pages](https://pages.github.com/) service creates static HTML pages based on these files, which are hosted on GitHub's servers free of charge.
 
-Many of the features of dynamic content management systems (like Wordpress) can be achieved in this fashion, using a fraction of the computational resources and with far less vulnerability to hacking and DDoSing. You can also modify the theme to your heart's content without touching the content of your site. If you get to a point where you've broken something in Jekyll/HTML/CSS beyond repair, your markdown files describing your talks, publications, etc. are safe. You can rollback the changes or even delete the repository and start over -- just be sure to save the markdown files! Finally, you can also write scripts that process the structured data on the site, such as [this one](https://github.com/academicpages/academicpages.github.io/blob/master/talkmap.ipynb) that analyzes metadata in pages about talks to display [a map of every location you've given a talk](https://academicpages.github.io/talkmap.html).
+![paypal]
+* Member of Technial Staff. PayPal. San Jose. 2019.02 ~ Present
+* Ph.D Intern. PayPal. San Jose. 2017.05 ~ 2017.08
 
-Getting started
+Education
 ======
-1. Register a GitHub account if you don't have one and confirm your e-mail (required!)
-1. Fork [this repository](https://github.com/academicpages/academicpages.github.io) by clicking the "fork" button in the top right. 
-1. Go to the repository's settings (rightmost item in the tabs that start with "Code", should be below "Unwatch"). Rename the repository "[your GitHub username].github.io", which will also be your website's URL.
-1. Set site-wide configuration and create content & metadata (see below -- also see [this set of diffs](http://archive.is/3TPas) showing what files were changed to set up [an example site](https://getorg-testacct.github.io) for a user with the username "getorg-testacct")
-1. Upload any files (like PDFs, .zip files, etc.) to the files/ directory. They will appear at https://[your GitHub username].github.io/files/example.pdf.  
-1. Check status by going to the repository settings, in the "GitHub pages" section
 
-Site-wide configuration
-------
-The main configuration file for the site is in the base directory in [_config.yml](https://github.com/academicpages/academicpages.github.io/blob/master/_config.yml), which defines the content in the sidebars and other site-wide features. You will need to replace the default variables with ones about yourself and your site's github repository. The configuration file for the top menu is in [_data/navigation.yml](https://github.com/academicpages/academicpages.github.io/blob/master/_data/navigation.yml). For example, if you don't have a portfolio or blog posts, you can remove those items from that navigation.yml file to remove them from the header. 
+![psu]
+* Ph.D. in Computer Science, Pennsylvania State University, University Park, PA, USA. 2012 ~ 2018
 
-Create content & metadata
-------
-For site content, there is one markdown file for each type of content, which are stored in directories like _publications, _talks, _posts, _teaching, or _pages. For example, each talk is a markdown file in the [_talks directory](https://github.com/academicpages/academicpages.github.io/tree/master/_talks). At the top of each markdown file is structured data in YAML about the talk, which the theme will parse to do lots of cool stuff. The same structured data about a talk is used to generate the list of talks on the [Talks page](https://academicpages.github.io/talks), each [individual page](https://academicpages.github.io/talks/2012-03-01-talk-1) for specific talks, the talks section for the [CV page](https://academicpages.github.io/cv), and the [map of places you've given a talk](https://academicpages.github.io/talkmap.html) (if you run this [python file](https://github.com/academicpages/academicpages.github.io/blob/master/talkmap.py) or [Jupyter notebook](https://github.com/academicpages/academicpages.github.io/blob/master/talkmap.ipynb), which creates the HTML for the map based on the contents of the _talks directory).
+![ntnu]
+* Bachelor in Computer Science and Information Engineering , National Taiwan Normal University, Taipei, Taiwan. 2008 ~ 2012
 
-**Markdown generator**
 
-I have also created [a set of Jupyter notebooks](https://github.com/academicpages/academicpages.github.io/tree/master/markdown_generator
-) that converts a CSV containing structured data about talks or presentations into individual markdown files that will be properly formatted for the academicpages template. The sample CSVs in that directory are the ones I used to create my own personal website at stuartgeiger.com. My usual workflow is that I keep a spreadsheet of my publications and talks, then run the code in these notebooks to generate the markdown files, then commit and push them to the GitHub repository.
+Publications
+======
 
-How to edit your site's GitHub repository
-------
-Many people use a git client to create files on their local computer and then push them to GitHub's servers. If you are not familiar with git, you can directly edit these configuration and markdown files directly in the github.com interface. Navigate to a file (like [this one](https://github.com/academicpages/academicpages.github.io/blob/master/_talks/2012-03-01-talk-1.md) and click the pencil icon in the top right of the content preview (to the right of the "Raw | Blame | History" buttons). You can delete a file by clicking the trashcan icon to the right of the pencil icon. You can also create new files or upload files by navigating to a directory and clicking the "Create new file" or "Upload files" buttons. 
+* Network spillovers and neighborhood crime: A computational statistics analysis of employment-based networks of neighborhoods. Corina Graif, Brittany Freelin, **Yu-Hsuan Kuo**, Hongjian Wang, Zhenhui Li, Daniel Kifer. **Justice Quarterly**, 2021. [![pdf]
+](https://yzk5145.github.io/files/crime.pdf)
+* Singling-Out vs. Blending-In: Outlier Detection and Differential Privacy in Data. **Yu-Hsuan Kuo**. The Pennsylvania State University, 2019 [![slide]
+](https://yzk5145.github.io/files/thesis_slides_kuo.pdf)
+* [A simple baseline for travel time estimation using large-scale trip data](https://dl.acm.org/doi/10.1145/3293317). Hongjian Wang, Xianfeng Tang, **Yu-Hsuan Kuo**, Daniel Kifer, and Zhenhui Li. ACM Transactions on Intelligent Systems and Technology (**TIST**), 2019 [![pdf]](https://dl.acm.org/doi/files/10.1145/3293317)
+* [Differentially Private Hierarchical Count-of-Counts Histograms](https://dl.acm.org/doi/10.14778/3236187.3236202). **Yu-Hsuan Kuo**,  Cho-Chun Chiu, Daniel Kifer, Michael Hay, Ashwin Machanavajjhala. Proceedings of the International Conference on Very Large Data Bases (**VLDB**), 2018. [![pdf]](http://www.vldb.org/pvldb/vol11/p1509-kuo.pdf) [![slide]](https://yzk5145.github.io/files/vldb_slides.pdf) [![code]](https://github.com/yzk5145/coco)[![poster]](https://yzk5145.github.io/files/vldb_poster.pdf)
+* [Detecting Outliers in Data with Correlated Measures](https://dl.acm.org/doi/10.1145/3269206.3271798). **Yu-Hsuan Kuo**, Zhenhui Li, Daniel Kifer. Proceedings of the International Conference on Information and Knowledge Management (**CIKM**), 2018. [![pdf]](https://dl.acm.org/doi/files/10.1145/3269206.3271798) [![slide]](https://yzk5145.github.io/files/cikm_slides.pdf) [![data]](https://github.com/yzk5145/outlier-detection)
+* [A Simple Baseline for Travel Time Estimation using Large-Scale Trip Data](https://dl.acm.org/doi/abs/10.1145/2996913.2996943)**. Hongjian Wang, **Yu-Hsuan Kuo**, Daniel Kifer, Zhenhui Li. ACM International Conference on Advances in Geographic Information Systems (**SIGSPATIAL**), 2016. [![pdf]](https://yzk5145.github.io/files/travel-time.pdf)
+* [Exploring Technological Trends for Patent Evaluation](https://ieeexplore.ieee.org/document/7058085). Shuting Wang, Wang-Chien Lee, Zhen Lei, Xianliang Zhang and **Yu-Hsuan Kuo**. The International Conference on Data Science and Advanced Analytics (**DSAA**), 2014 [![pdf]](https://yzk5145.github.io/files/trend.pdf)
 
-Example: editing a markdown file for a talk
-![Editing a markdown file for a talk](/images/editing-talk.png)
+Patents
+======
 
-For more info
-------
-More info about configuring academicpages can be found in [the guide](https://academicpages.github.io/markdown/). The [guides for the Minimal Mistakes theme](https://mmistakes.github.io/minimal-mistakes/docs/configuration/) (which this theme was forked from) might also be helpful.
+* [Systems and Methods for Predicting and Providing Automated Online Chat Assistance](https://patentimages.storage.googleapis.com/e8/7f/9a/3e6c82bafaa878/US20210125025A1.pdf). **Yu-Hsuan Kuo**, Venkata Ramana Nadimpalli. Application Number: 16/665,709
+
+# Selected Talks
+* Predicting and Mining Customer's Intent: Challenges and Techniques. Stanford's Global Women in Data Science (WiDS) in the Eastern region. 2021.04 [![youtube]]()
+
+
+
+Teaching
+======
+
+* CMPSC 465 Data Structure and Algorithms. Teaching Assistant at Penn State University. *Fall 2018*
+* CMPSC/MATH 451 Numerical Computations. Teaching Assistant at Penn State University. *Fall 2013*
+* Introduction to Programming in C. Teacher at the Affiliated Senior High School of National Taiwan Normal University. *Spring 2012*
+
+Misc
+======
+
+* Mentor the Valley Consulting Group at UC Berkeley's campus on ``Market Research``.  Spring 2019.
+* I am a principal cellist of PSU Campus Orchestra. Fall 2015 and Spring 2016.
